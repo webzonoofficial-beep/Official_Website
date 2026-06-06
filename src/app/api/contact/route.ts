@@ -32,7 +32,7 @@ export async function POST(req: Request) {
     if (resend) {
       const { error } = await resend.emails.send({
         from: 'Webzono Leads <onboarding@resend.dev>', // Update this to your verified domain later (e.g., leads@webzono.com)
-        to: ['info@webzono.com'],
+        to: ['webzono.official@gmail.com'],
         subject: `New Lead: ${name} from ${businessName}`,
         html: htmlContent,
       });

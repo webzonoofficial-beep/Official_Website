@@ -151,8 +151,8 @@ export default function Contact() {
                 <div className="flex flex-col gap-4 text-sm">
                   <div className="flex justify-between items-center">
                     <span className="text-text-muted">Email</span>
-                    <a href="mailto:info@webzono.com" className="font-semibold text-foreground hover:text-primary transition-colors">
-                      info@webzono.com
+                    <a href="mailto:webzono.official@gmail.com" className="font-semibold text-foreground hover:text-primary transition-colors">
+                      webzono.official@gmail.com
                     </a>
                   </div>
                   <div className="flex justify-between items-center">
