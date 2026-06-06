@@ -155,17 +155,27 @@ export default function Contact() {
                       webzono.official@gmail.com
                     </a>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-text-muted">Phone / Call</span>
-                    <a href="tel:+917358859792" className="font-semibold text-foreground hover:text-primary transition-colors">
-                      +91 73588 59792
-                    </a>
+                  <div className="flex justify-between items-start">
+                    <span className="text-text-muted mt-1">Phone / Call</span>
+                    <div className="flex flex-col items-end gap-1">
+                      <a href="tel:+917358859792" className="font-semibold text-foreground hover:text-primary transition-colors">
+                        +91 73588 59792
+                      </a>
+                      <a href="tel:+917358177544" className="font-semibold text-foreground hover:text-primary transition-colors">
+                        +91 73581 77544
+                      </a>
+                    </div>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-text-muted">WhatsApp</span>
-                    <a href="https://wa.me/917358859792?text=Hi%20Webzono" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 font-bold text-emerald-500 hover:text-emerald-400 transition-colors">
-                      Chat with us ↗
-                    </a>
+                  <div className="flex justify-between items-start">
+                    <span className="text-text-muted mt-1">WhatsApp</span>
+                    <div className="flex flex-col items-end gap-1">
+                      <a href="https://wa.me/917358859792?text=Hi%20Webzono" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 font-bold text-emerald-500 hover:text-emerald-400 transition-colors">
+                        +91 73588 59792 ↗
+                      </a>
+                      <a href="https://wa.me/917358177544?text=Hi%20Webzono" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 font-bold text-emerald-500 hover:text-emerald-400 transition-colors">
+                        +91 73581 77544 ↗
+                      </a>
+                    </div>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-text-muted">Location</span>

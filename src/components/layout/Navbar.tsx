@@ -60,12 +60,15 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-            <a href="tel:+917358859792" className="text-text-muted hover:text-primary transition-colors flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                 <PhoneCall className="w-4 h-4 text-primary" />
               </div>
-              <span className="text-sm font-bold font-outfit">+91 73588 59792</span>
-            </a>
+              <div className="flex flex-col gap-0.5">
+                <a href="tel:+917358859792" className="text-xs font-bold font-outfit text-text-muted hover:text-primary transition-colors leading-none">+91 73588 59792</a>
+                <a href="tel:+917358177544" className="text-xs font-bold font-outfit text-text-muted hover:text-primary transition-colors leading-none">+91 73581 77544</a>
+              </div>
+            </div>
             <a href="#contact">
               <Button variant="primary" size="sm" magnetic>
                 Get Started
@@ -112,10 +115,14 @@ export default function Navbar() {
                 </motion.li>
               ))}
             </ul>
-            <div className="mt-8 mb-4">
+            <div className="mt-8 mb-4 flex flex-col gap-3">
               <a href="tel:+917358859792" onClick={() => setMobileMenuOpen(false)} className="flex items-center justify-center gap-2 p-4 rounded-xl bg-primary/10 text-primary border border-primary/20">
                 <PhoneCall className="w-5 h-5" />
-                <span className="font-bold font-outfit text-lg">Call Us Now</span>
+                <span className="font-bold font-outfit text-lg">+91 73588 59792</span>
+              </a>
+              <a href="tel:+917358177544" onClick={() => setMobileMenuOpen(false)} className="flex items-center justify-center gap-2 p-4 rounded-xl bg-primary/10 text-primary border border-primary/20">
+                <PhoneCall className="w-5 h-5" />
+                <span className="font-bold font-outfit text-lg">+91 73581 77544</span>
               </a>
             </div>
             <div className="mt-auto">
