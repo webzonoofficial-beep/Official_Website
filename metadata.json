@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Webzono Portfolio",
+  "description": "A 3D interactive corporate portfolio website for Webzono, showcasing services, pricing, and projects.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

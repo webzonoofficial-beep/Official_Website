@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Syne:wght@700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-syne: "Syne", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-bg-void: #050508;
+  --color-bg-surface: #0D0D14;
+  --color-accent-blue: #3B82F6;
+  --color-accent-cyan: #22D3EE;
+  --color-accent-purple: #8B5CF6;
+  --color-text-primary: #F1F5F9;
+  --color-text-muted: #64748B;
+}
+
+@layer base {
+  :root {
+    --bg-void: #050508;
+    --bg-surface: #0D0D14;
+    --accent-blue: #3B82F6;
+    --accent-cyan: #22D3EE;
+    --accent-purple: #8B5CF6;
+    --text-primary: #F1F5F9;
+    --text-muted: #64748B;
+  }
+
+  body {
+    background-color: var(--bg-void);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-syne);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}

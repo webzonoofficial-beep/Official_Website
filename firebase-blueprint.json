@@ -1,0 +1,38 @@
+{
+  "entities": {
+    "Message": {
+      "title": "Message",
+      "description": "A contact form message from a user.",
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "type": "string"
+        },
+        "businessName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "projectDetails": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "timestamp"
+        }
+      },
+      "required": ["fullName", "businessName", "email", "phone", "projectDetails", "createdAt"]
+    }
+  },
+  "firestore": {
+    "messages/{messageId}": {
+      "schema": {
+        "$ref": "#/entities/Message"
+      },
+      "description": "Messages from the contact form."
+    }
+  }
+}
