@@ -80,7 +80,7 @@ export default function Navbar() {
         <div className={clsx(styles.logo, "relative z-50")}>
           <Link href="/">
             <Image 
-              src="/api/assets/logo.png" 
+              src="/assets/logo.png" 
               alt="WEBZONO Official Logo"
               width={180}
               height={52}

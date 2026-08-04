@@ -99,7 +99,7 @@ export default function FoundersSection() {
               </Link>
               <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} className="absolute inset-0 z-10 p-4">
                 <Image 
-                  src="/api/assets/pugazhenthi.png" 
+                  src="/assets/pugazhenthi.png" 
                   alt="Pugazhenthi P"
                   fill
                   className="object-contain object-bottom transition-transform duration-700 group-hover:scale-[1.03]"
@@ -139,7 +139,7 @@ export default function FoundersSection() {
                 <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-white/70 hover:bg-blue-500/20 hover:border-blue-500/50 hover:text-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-300 hover:scale-110 group/social">
                   <Github className="w-5 h-5 group-hover/social:scale-110 transition-transform duration-300" />
                 </a>
-                <a href="mailto:hello@webzono.in" className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-white/70 hover:bg-blue-500/20 hover:border-blue-500/50 hover:text-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-300 hover:scale-110 group/social">
+                <a href="mailto:webzono.official.in" className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-white/70 hover:bg-blue-500/20 hover:border-blue-500/50 hover:text-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-300 hover:scale-110 group/social">
                   <Mail className="w-5 h-5 group-hover/social:scale-110 transition-transform duration-300" />
                 </a>
               </div>
@@ -164,7 +164,7 @@ export default function FoundersSection() {
               </Link>
               <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 6, delay: 1, repeat: Infinity, ease: "easeInOut" }} className="absolute inset-0 z-10 p-4">
                 <Image 
-                  src="/api/assets/yuvaraj.png" 
+                  src="/assets/yuvaraj.png" 
                   alt="Yuvaraj G"
                   fill
                   className="object-contain object-bottom transition-transform duration-700 group-hover:scale-[1.03]"
@@ -215,9 +215,9 @@ export default function FoundersSection() {
 
         {/* Portfolio CTA */}
         <div className="flex justify-center mt-12">
-          <Link href="/portfolio">
+          <Link href="/team">
             <button className="px-10 py-5 rounded-full bg-white text-black font-semibold text-sm transition-all duration-500 hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] flex items-center justify-center gap-3 group">
-              Meet Our Leadership
+              Meet Our Team
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-500" />
             </button>
           </Link>

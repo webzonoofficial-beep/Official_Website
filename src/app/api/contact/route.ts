@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 import { z } from "zod";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "webzono.official@gmail.com";
 
 // Validation schema
@@ -23,6 +22,39 @@ const MAX_REQUESTS = 3;
 
 export async function POST(req: Request) {
   try {
+    const emailUser = process.env.EMAIL_USER;
+    const emailPass = process.env.EMAIL_PASS;
+
+    const missingVars = [];
+    if (!emailUser) missingVars.push("EMAIL_USER");
+    if (!emailPass) missingVars.push("EMAIL_PASS");
+
+    let transporter;
+
+    if (missingVars.length > 0) {
+      console.error(`Email configuration error. Missing environment variables: ${missingVars.join(", ")}`);
+      console.warn("Falling back to Ethereal Email (mock SMTP service) for testing.");
+      
+      const testAccount = await nodemailer.createTestAccount();
+      transporter = nodemailer.createTransport({
+        host: "smtp.ethereal.email",
+        port: 587,
+        secure: false,
+        auth: {
+          user: testAccount.user,
+          pass: testAccount.pass,
+        },
+      });
+    } else {
+      transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+          user: emailUser,
+          pass: emailPass,
+        },
+      });
+    }
+    
     const ip = req.headers.get("x-forwarded-for") || "unknown";
     
     // Rate Limiting Logic
@@ -46,49 +78,69 @@ export async function POST(req: Request) {
     }
 
     const body = await req.json();
-    
+    console.log("[1/5] Request received:", JSON.stringify(body, null, 2));
+
     // Server-side Validation
     const validatedData = contactSchema.parse(body);
     const browser = req.headers.get("user-agent") || "unknown";
     const submittedDate = new Date().toLocaleString();
+    
+    console.log("[2/5] Email service initialized successfully.");
 
     // 1. Send Inquiry to Admin
-    const adminEmail = await resend.emails.send({
-      from: "WEBZONO Inquiries <onboarding@resend.dev>", // Needs verified domain in production
-      to: [CONTACT_EMAIL],
-      subject: "New Project Inquiry - WEBZONO",
-      html: `
-        <h2>New Project Inquiry</h2>
-        <p><strong>Full Name:</strong> ${validatedData.name}</p>
-        <p><strong>Company Name:</strong> ${validatedData.company || "N/A"}</p>
-        <p><strong>Email:</strong> ${validatedData.email}</p>
-        <p><strong>Phone Number:</strong> ${validatedData.phone}</p>
-        <p><strong>Project Type:</strong> ${validatedData.projectType}</p>
-        <p><strong>Budget:</strong> ${validatedData.budget}</p>
-        <p><strong>Project Details:</strong></p>
-        <p>${validatedData.description.replace(/\\n/g, "<br/>")}</p>
-        <hr />
-        <p><strong>Submitted Date & Time:</strong> ${submittedDate}</p>
-        <p><strong>User IP:</strong> ${ip}</p>
-        <p><strong>Browser:</strong> ${browser}</p>
-      `,
-    });
+    try {
+      console.log("[3/5] Sending email to admin...");
+      const adminInfo = await transporter.sendMail({
+        from: `"WEBZONO Inquiries" <${emailUser || 'test@ethereal.email'}>`,
+        to: "webzono.official@gmail.com",
+        replyTo: validatedData.email,
+        subject: "New Website Inquiry - WEBZONO",
+        html: `
+          <h2>New Website Inquiry - WEBZONO</h2>
+          <p><strong>Name:</strong> ${validatedData.name}</p>
+          <p><strong>Email:</strong> ${validatedData.email}</p>
+          <p><strong>Phone:</strong> ${validatedData.phone}</p>
+          <p><strong>Company:</strong> ${validatedData.company || "N/A"}</p>
+          <p><strong>Service:</strong> ${validatedData.projectType}</p>
+          <p><strong>Message:</strong></p>
+          <p>${validatedData.description.replace(/\n/g, "<br/>")}</p>
+          <hr />
+          <p><strong>Date & Time:</strong> ${submittedDate}</p>
+        `,
+      });
+      
+      console.log("[4/5] Email sent successfully (Admin).");
+      console.log("[5/5] Email provider response:", adminInfo.response);
 
-    if (adminEmail.error) {
-      console.error("Admin Email Error:", adminEmail.error);
-      return NextResponse.json({ error: "Failed to send inquiry." }, { status: 500 });
+      if (missingVars.length > 0) {
+        console.log("⚠️ NO REAL CREDENTIALS FOUND. Email intercepted by Ethereal. Preview URL: %s", nodemailer.getTestMessageUrl(adminInfo));
+      }
+    } catch (adminError: any) {
+      console.error("❌ Admin Email Error Details:", adminError);
+      return NextResponse.json(
+        { error: `Failed to send email: ${adminError.message || 'SMTP Error'}` },
+        { status: 500 }
+      );
     }
 
     // 2. Send Auto-Reply to Client
-    const clientEmail = await resend.emails.send({
-      from: "WEBZONO Team <onboarding@resend.dev>", // Needs verified domain in production
-      to: [validatedData.email],
-      subject: "Thank you for contacting WEBZONO",
-      text: `Thank you for contacting WEBZONO.\n\nWe have received your project inquiry successfully.\n\nOur team will review your requirements and contact you within 1–2 business hours.\n\nRegards,\nWEBZONO Team`,
-    });
-
-    if (clientEmail.error) {
-      console.error("Client Email Error:", clientEmail.error);
+    try {
+      console.log("[3/5] Sending auto-reply to client...");
+      const clientInfo = await transporter.sendMail({
+        from: `"WEBZONO Team" <${emailUser || 'test@ethereal.email'}>`,
+        to: validatedData.email,
+        subject: "Thank you for contacting WEBZONO",
+        text: `Thank you for contacting WEBZONO.\n\nWe have received your project inquiry successfully.\n\nOur team will review your requirements and contact you within 1–2 business hours.\n\nRegards,\nWEBZONO Team`,
+      });
+      
+      console.log("[4/5] Auto-reply sent successfully (Client).");
+      console.log("[5/5] Email provider response:", clientInfo.response);
+      
+      if (missingVars.length > 0) {
+        console.log("⚠️ NO REAL CREDENTIALS FOUND. Auto-reply intercepted by Ethereal. Preview URL: %s", nodemailer.getTestMessageUrl(clientInfo));
+      }
+    } catch (clientError) {
+      console.error("❌ Client Email Error:", clientError);
       // We still return success since the admin got the email, but log the error
     }
 

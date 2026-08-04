@@ -33,7 +33,7 @@ function WorkspaceImage() {
   return (
     <Float speed={2} rotationIntensity={0.2} floatIntensity={0.5}>
       <Image
-        url="/api/assets/workspace.png"
+        url="/assets/workspace.png"
         transparent
         scale={[scale * 1.5, scale, ]}
         position={[viewport.width > 5 ? 2 : 0, 0, -1]}

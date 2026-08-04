@@ -42,6 +42,7 @@ const ServicesSection = dynamic(() => import("@/components/ServicesSection"), { 
 const FeaturesSection = dynamic(() => import("@/components/FeaturesSection"), { ssr: true });
 const PortfolioSection = dynamic(() => import("@/components/PortfolioSection"), { ssr: true });
 const FoundersSection = dynamic(() => import("@/components/FoundersSection"), { ssr: true });
+
 const ProcessSection = dynamic(() => import("@/components/ProcessSection"), { ssr: true });
 const TestimonialsSection = dynamic(() => import("@/components/TestimonialsSection"), { ssr: true });
 const FAQSection = dynamic(() => import("@/components/FAQSection"), { ssr: true });
@@ -163,6 +164,7 @@ export default function Home() {
       <FeaturesSection />
       <PortfolioSection />
       <FoundersSection />
+
       <ProcessSection />
       <TestimonialsSection />
       <FAQSection />

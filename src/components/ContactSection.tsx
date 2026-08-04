@@ -9,7 +9,7 @@ import * as z from "zod";
 
 const contactCards = [
   { type: "phone" },
-  { type: "standard", icon: <Mail className="w-5 h-5 text-text-main" />, label: "Email", value: "hello@webzono.in", href: "mailto:hello@webzono.in" },
+  { type: "standard", icon: <Mail className="w-5 h-5 text-text-main" />, label: "Email", value: "webzono.official@gmail.com", href: "webzono.official@gmail.com" },
   { type: "standard", icon: <MessageCircle className="w-5 h-5 text-text-main" />, label: "WhatsApp", value: "Message Us", href: "https://wa.me/917358859792?text=Hello%20WEBZONO%20Team%2C%0A%0AI%20visited%20your%20website%20and%20I%E2%80%99m%20interested%20in%20discussing%20a%20new%20project.%0A%0APlease%20let%20me%20know%20how%20we%20can%20get%20started." },
   { type: "standard", icon: <Globe className="w-5 h-5 text-text-main" />, label: "Website", value: "www.webzono.com", href: "https://www.webzono.com" },
   { type: "standard", icon: <MapPin className="w-5 h-5 text-text-main" />, label: "Location", value: "Chennai, India" }

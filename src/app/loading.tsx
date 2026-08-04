@@ -19,7 +19,7 @@ export default function Loading() {
         className="relative flex items-center justify-center"
       >
         <Image 
-          src="/api/assets/logo.png"
+          src="/assets/logo.png"
           alt="WEBZONO Loading"
           width={180}
           height={60}

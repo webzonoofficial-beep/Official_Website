@@ -90,7 +90,7 @@ export default function PortfolioFounders() {
           <div className="relative w-full md:w-[45%] h-[450px] md:h-auto overflow-hidden bg-[#0a0a0a]/50 group-hover:bg-[#0a0a0a]/30 transition-colors duration-500">
             <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} className="absolute inset-0 z-10 p-4">
               <Image 
-                src="/api/assets/pugazhenthi.png" 
+                src="/assets/pugazhenthi.png" 
                 alt="Pugazhenthi P"
                 fill
                 className="object-contain object-bottom transition-transform duration-700 group-hover:scale-[1.03]"
@@ -171,7 +171,7 @@ export default function PortfolioFounders() {
           <div className="relative w-full md:w-[45%] h-[450px] md:h-auto overflow-hidden bg-[#0a0a0a]/50 group-hover:bg-[#0a0a0a]/30 transition-colors duration-500">
             <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 6, delay: 1, repeat: Infinity, ease: "easeInOut" }} className="absolute inset-0 z-10 p-4">
               <Image 
-                src="/api/assets/yuvaraj.png" 
+                src="/assets/yuvaraj.png" 
                 alt="Yuvaraj G"
                 fill
                 className="object-contain object-bottom transition-transform duration-700 group-hover:scale-[1.03]"

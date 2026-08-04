@@ -48,7 +48,7 @@ export default function Footer() {
             <div className="flex flex-col items-center lg:items-start gap-3">
               <Link href="/" className="inline-block relative z-10">
                 <Image 
-                  src="/api/assets/logo.png" 
+                  src="/assets/logo.png" 
                   alt="WEBZONO Official Logo"
                   width={240}
                   height={70}
