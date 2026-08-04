@@ -107,12 +107,12 @@ function CaseStudyCard({ study, index, isExpanded, onToggle }: { study: typeof c
               </div>
             </div>
             <div className="relative w-full h-[calc(100%-1rem)] sm:h-[calc(100%-1.5rem)]">
-              <Image 
+              <Image sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                 src={study.image} 
                 fill 
                 className="object-cover object-top" 
                 alt={study.title} 
-                unoptimized
+                quality={100}
               />
             </div>
           </div>
@@ -305,12 +305,12 @@ export default function PortfolioCaseStudies() {
         
         {/* CTA Background Image & Overlay */}
         <div className="absolute inset-0 z-0">
-          <Image
+          <Image sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
             alt="Team collaborating"
             fill
             className="object-cover object-center opacity-30 mix-blend-luminosity"
-            unoptimized
+            quality={100}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#04060A] via-[#04060A]/80 to-[#04060A]/90" />
         </div>

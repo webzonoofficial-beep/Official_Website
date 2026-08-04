@@ -224,12 +224,12 @@ export default function PortfolioFeaturedProjects() {
                       </div>
                       
                       <div className="relative w-full h-[calc(100%-1.5rem)] overflow-hidden group">
-                        <Image 
+                        <Image sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                           src={project.image} 
                           fill 
                           className="object-cover object-top transition-transform duration-1000 group-hover:scale-110" 
                           alt={project.title} 
-                          unoptimized
+                          quality={100}
                         />
                         {/* Hover Overlay */}
                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-sm">
@@ -353,12 +353,12 @@ export default function PortfolioFeaturedProjects() {
           >
             {[...galleryImages, ...galleryImages].map((img, idx) => (
               <div key={idx} className="relative w-[400px] md:w-[600px] aspect-[16/9] flex-shrink-0 rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
-                <Image
+                <Image sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   src={img}
                   alt={`Gallery Image ${idx}`}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  unoptimized
+                  quality={100}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                   <span className="text-white font-medium">Premium Visuals</span>

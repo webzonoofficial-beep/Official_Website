@@ -221,12 +221,12 @@ export default function PortfolioTrust() {
                 </p>
                 <div className="flex items-center gap-6 pt-8 border-t border-white/10 mt-auto">
                   <div className="w-16 h-16 rounded-full overflow-hidden relative border border-white/20">
-                    <Image 
+                    <Image sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                       src={testimonials[currentIndex].image} 
                       alt={testimonials[currentIndex].name}
                       fill
                       className="object-cover"
-                      unoptimized
+                      quality={100}
                     />
                   </div>
                   <div>

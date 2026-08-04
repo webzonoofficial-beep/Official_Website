@@ -45,7 +45,7 @@ export default function FoundersSection() {
       
       {/* Background Environment */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <Image 
+        <Image sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" 
           alt="Premium Office Environment"
           fill
@@ -98,13 +98,12 @@ export default function FoundersSection() {
                 <span className="sr-only">View Founder Profile</span>
               </Link>
               <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} className="absolute inset-0 z-10 p-4">
-                <Image 
+                <Image sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                   src="/assets/pugazhenthi.png" 
                   alt="Pugazhenthi P"
                   fill
                   className="object-contain object-bottom transition-transform duration-700 group-hover:scale-[1.03]"
-                  priority
-                  unoptimized
+                  quality={100}
                 />
               </motion.div>
               <div className="absolute inset-0 bg-blue-500/10 mix-blend-screen z-0 opacity-40 group-hover:opacity-70 transition-opacity duration-700 blur-[60px]" />
@@ -163,13 +162,12 @@ export default function FoundersSection() {
                 <span className="sr-only">View Founder Profile</span>
               </Link>
               <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 6, delay: 1, repeat: Infinity, ease: "easeInOut" }} className="absolute inset-0 z-10 p-4">
-                <Image 
+                <Image sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                   src="/assets/yuvaraj.png" 
                   alt="Yuvaraj G"
                   fill
                   className="object-contain object-bottom transition-transform duration-700 group-hover:scale-[1.03]"
-                  priority
-                  unoptimized
+                  quality={100}
                 />
               </motion.div>
               <div className="absolute inset-0 bg-indigo-500/10 mix-blend-screen z-0 opacity-40 group-hover:opacity-70 transition-opacity duration-700 blur-[60px]" />

@@ -225,13 +225,14 @@ export default function PortfolioPage() {
             className="w-full relative aspect-[4/3] rounded-[24px] overflow-hidden border border-white/10 shadow-[0_20px_80px_rgba(59,130,246,0.2)] mt-10 lg:mt-0 group perspective-1000"
           >
             <div className="absolute inset-0 bg-blue-500/10 mix-blend-screen opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10" />
-            <Image 
+            <Image sizes="(max-width: 768px) 100vw, 50vw" 
               src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop" 
               alt="Premium Digital Product Showcase" 
               fill 
               className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
               style={{ transform: "translateZ(20px)" }}
               priority
+              quality={100}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#04060A]/80 via-transparent to-transparent pointer-events-none z-20" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#04060A]/50 via-transparent to-transparent pointer-events-none z-20" />

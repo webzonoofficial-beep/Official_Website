@@ -89,13 +89,12 @@ export default function PortfolioFounders() {
           {/* Image Section */}
           <div className="relative w-full md:w-[45%] h-[450px] md:h-auto overflow-hidden bg-[#0a0a0a]/50 group-hover:bg-[#0a0a0a]/30 transition-colors duration-500">
             <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} className="absolute inset-0 z-10 p-4">
-              <Image 
+              <Image sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                 src="/assets/pugazhenthi.png" 
                 alt="Pugazhenthi P"
                 fill
                 className="object-contain object-bottom transition-transform duration-700 group-hover:scale-[1.03]"
-                priority
-                unoptimized
+                quality={100}
               />
             </motion.div>
             <div className="absolute inset-0 bg-blue-500/10 mix-blend-screen z-0 opacity-40 group-hover:opacity-70 transition-opacity duration-700 blur-[60px]" />
@@ -170,13 +169,12 @@ export default function PortfolioFounders() {
           {/* Image Section */}
           <div className="relative w-full md:w-[45%] h-[450px] md:h-auto overflow-hidden bg-[#0a0a0a]/50 group-hover:bg-[#0a0a0a]/30 transition-colors duration-500">
             <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 6, delay: 1, repeat: Infinity, ease: "easeInOut" }} className="absolute inset-0 z-10 p-4">
-              <Image 
+              <Image sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                 src="/assets/yuvaraj.png" 
                 alt="Yuvaraj G"
                 fill
                 className="object-contain object-bottom transition-transform duration-700 group-hover:scale-[1.03]"
-                priority
-                unoptimized
+                quality={100}
               />
             </motion.div>
             <div className="absolute inset-0 bg-indigo-500/10 mix-blend-screen z-0 opacity-40 group-hover:opacity-70 transition-opacity duration-700 blur-[60px]" />

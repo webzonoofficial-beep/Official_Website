@@ -231,7 +231,7 @@ export default function PortfolioServices() {
         
         {/* Banner Background Image */}
         <div className="absolute inset-0 opacity-20 z-0">
-          <Image
+          <Image sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80"
             alt="Developers working on code"
             fill

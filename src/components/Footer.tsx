@@ -53,7 +53,6 @@ export default function Footer() {
                   width={240}
                   height={70}
                   className="h-[60px] md:h-[70px] w-auto object-contain block opacity-100"
-                  priority
                 />
               </Link>
               <p className="text-white/60 font-light text-sm tracking-wide mt-2">Engineering Digital Excellence.</p>

@@ -10,7 +10,7 @@ export default function FinalCTASection() {
       
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <Image 
+        <Image sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
           src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" 
           alt="Modern Architecture" 
           fill 

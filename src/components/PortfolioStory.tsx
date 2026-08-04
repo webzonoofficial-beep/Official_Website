@@ -64,12 +64,12 @@ export default function PortfolioStory() {
             transition={{ duration: 0.8 }}
             className="relative w-full aspect-[4/3] rounded-[32px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 group"
           >
-            <Image 
+            <Image sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
               src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop" 
               alt="Premium Workspace"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-1000"
-              unoptimized
+              quality={100}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#04060A]/80 via-transparent to-transparent opacity-60" />
           </motion.div>
