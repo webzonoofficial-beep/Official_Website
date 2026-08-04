@@ -1,0 +1,342 @@
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.canvasContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at center, #0a0a1a 0%, #000000 100%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  pointer-events: none;
+}
+
+.title {
+  font-size: clamp(4rem, 10vw, 8rem);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+}
+
+.subtitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  margin-bottom: 2rem;
+  color: var(--text-main);
+  opacity: 0.9;
+}
+
+.description {
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.heroCtas {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.btnPrimary {
+  background: rgba(0, 229, 255, 0.1);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 1rem 2.5rem;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+}
+
+.btnPrimary:hover {
+  background: var(--primary);
+  color: #000;
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.6);
+}
+
+.btnSecondary {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--surface-border);
+  padding: 1rem 2.5rem;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnSecondary:hover {
+  border-color: var(--text-main);
+}
+
+/* Services Section */
+.section {
+  padding: 8rem 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.serviceCard {
+  padding: 2.5rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.serviceCard:hover {
+  transform: translateY(-10px);
+  border-color: rgba(0, 229, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 229, 255, 0.1);
+}
+
+.serviceIcon {
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 229, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+}
+
+.serviceTitle {
+  font-size: 1.5rem;
+}
+
+.serviceDesc {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Stats Section */
+.statsContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 4rem;
+  border-radius: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 4rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Founders Section */
+.foundersGrid {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.founderCard {
+  width: 350px;
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 24px;
+  transition: transform 0.3s ease;
+}
+
+.founderCard:hover {
+  transform: translateY(-15px);
+  border-color: rgba(0, 255, 200, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(0, 255, 200, 0.1);
+}
+
+.founderImagePlaceholder {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--surface), rgba(0, 229, 255, 0.2));
+  margin: 0 auto 2rem auto;
+  border: 2px solid var(--surface-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.founderName {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.founderRole {
+  color: var(--accent);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.socialIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.socialIcon:hover {
+  background: var(--primary);
+  color: #000;
+}
+
+/* Timeline */
+.timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, var(--primary), var(--accent), transparent);
+}
+
+.timelineItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+  width: 100%;
+}
+
+.timelineItem:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timelineContent {
+  width: 45%;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: right;
+}
+
+.timelineItem:nth-child(even) .timelineContent {
+  text-align: left;
+}
+
+.timelineDot {
+  width: 20px;
+  height: 20px;
+  background: var(--primary);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--primary);
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .heroContent {
+    padding: 0 2rem;
+  }
+  .title {
+    font-size: 3rem;
+  }
+  .section {
+    padding: 4rem 2rem;
+  }
+  .timeline::before {
+    left: 20px;
+  }
+  .timelineItem {
+    flex-direction: column !important;
+    align-items: flex-start;
+    padding-left: 50px;
+    position: relative;
+  }
+  .timelineContent {
+    width: 100%;
+    text-align: left !important;
+  }
+  .timelineDot {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
