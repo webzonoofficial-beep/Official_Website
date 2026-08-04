@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Monitor, Smartphone, ShoppingBag, PenTool, Code, Cloud, TrendingUp, Cpu, Database, Users, Server, Search } from "lucide-react";
+import { Monitor, Smartphone, ShoppingBag, PenTool, Code, Cloud, TrendingUp, Cpu, Database, Users, Server, Search } from "lucide-react";
 
 interface ServiceCardProps {
   title: string;

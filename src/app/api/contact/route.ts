@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { z } from "zod";
 
-const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "webzono.official@gmail.com";
 
 // Validation schema
 const contactSchema = z.object({
@@ -82,7 +81,6 @@ export async function POST(req: Request) {
 
     // Server-side Validation
     const validatedData = contactSchema.parse(body);
-    const browser = req.headers.get("user-agent") || "unknown";
     const submittedDate = new Date().toLocaleString();
     
     console.log("[2/5] Email service initialized successfully.");

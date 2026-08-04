@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { motion, useMotionValue, useTransform, useSpring, useScroll } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Code2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 
 // 3D Tilt Hook

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
-import { BadgeCheck, ArrowRight, Linkedin, Mail, Github, Crown, Zap } from "lucide-react";
+import { ArrowRight, Linkedin, Mail, Github, Crown, Zap } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 

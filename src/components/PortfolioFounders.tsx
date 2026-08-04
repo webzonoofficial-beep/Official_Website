@@ -2,7 +2,7 @@
 
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import Image from "next/image";
-import { CheckCircle2, Medal, Briefcase, Users, Star, Clock, Linkedin, Mail, BadgeCheck, Github, Crown, Zap } from "lucide-react";
+import { Medal, Briefcase, Users, Star, Clock, Linkedin, Mail, Github, Crown, Zap } from "lucide-react";
 
 // Custom hook for 3D Tilt Effect
 function use3DTilt(intensity: number = 2) {
